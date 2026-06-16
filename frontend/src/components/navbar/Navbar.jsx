@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import '../../App.css'; 
 import Searchbar from './Searchbar.jsx'
+import NavActions from './NavActions.jsx'
 
 function Navbar () {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,12 @@ function Navbar () {
   
   <div className="flex-1">
     <Searchbar />
+  
   </div>
 
   {/* Nav links + icons go here */}
+
+   <NavActions />
 
 </nav>
       </>
