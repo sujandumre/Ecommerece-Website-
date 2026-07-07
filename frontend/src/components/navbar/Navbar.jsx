@@ -35,6 +35,7 @@ function Navbar () {
   
   <div className="flex-1">
     <Searchbar />
+    
   
   </div>
 
