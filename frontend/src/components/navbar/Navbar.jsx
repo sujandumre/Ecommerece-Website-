@@ -19,7 +19,7 @@ function Navbar () {
   return (
    <>
 
-    <nav className="flex items-center gap-4 px-6 py-3 bg-white border-b border-gray-200">
+    <nav className="flex items-center gap-4 px-6 py-3 bg-pink-100 border-b border-gray-200 text-gray-900">
   
   {/* Logo */}
   <a href="/" className="flex items-center gap-2 shrink-0">

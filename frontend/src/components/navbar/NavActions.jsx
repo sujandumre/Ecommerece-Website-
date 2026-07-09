@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 
+
 function NavActions() {
   return (
     <div className="flex items-center gap-6">
@@ -16,8 +17,9 @@ function NavActions() {
         to="/wishlist"
         className="flex items-center gap-1 hover:text-blue-600"
       >
-        <Heart size={18} />
+        
         Wishlist
+        <Heart size={18} />
       </Link>
 
       <Link
