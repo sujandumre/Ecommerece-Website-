@@ -1,1 +1,1 @@
-# Ecommerece-Website-
+# ShopEase Ecommerece-Website-
