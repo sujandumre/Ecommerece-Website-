@@ -1,5 +1,6 @@
 import React from 'react'
-import dash1 from "../assets/dash1.png"; 
+// import dash1 from "../assets/dash1.png"; 
+import dash1 from "../assets/dash1.png";
 
 function Hero() {
   return (
