@@ -4,6 +4,7 @@ import { Heart } from "lucide-react";
 
 function NavActions() {
   return (
+    
     <div className="flex items-center gap-6">
 
       <Link
@@ -30,6 +31,8 @@ function NavActions() {
       </Link>
 
     </div>
+    
+  
   );
 }
 

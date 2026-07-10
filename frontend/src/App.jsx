@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/navbar/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import Bestseller from './components/Bestseller.jsx'
+// import {MobileMenu} from './components/navbar/MobileMenu.jsx'
 
 
 function App() {
@@ -11,8 +12,10 @@ function App() {
 
   return (
     <>
-      {/* <Navbar/>
-      <Hero/> */}
+       <Navbar/>
+       {/* <MobileMenu/> */}
+      <Hero/> 
+
       <Bestseller/>
 
     </>

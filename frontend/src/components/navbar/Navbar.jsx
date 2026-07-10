@@ -14,12 +14,13 @@ import '../../App.css';
 import Searchbar from './Searchbar.jsx'
 import NavActions from './NavActions.jsx'
 
+
 function Navbar () {
   const [isOpen, setIsOpen] = useState(false);
   return (
    <>
 
-    <nav className="flex items-center gap-4 px-6 py-3 bg-pink-100 border-b border-gray-200 text-gray-900">
+    <nav className="flex items-center gap-4 px-6 py-3 bg-white shadow-sm border-b border-gray-200 text-gray-900">
   
   {/* Logo */}
   <a href="/" className="flex items-center gap-2 shrink-0">
@@ -42,7 +43,7 @@ function Navbar () {
   {/* Nav links + icons go here */}
 
    <NavActions />
-
+   
 </nav>
       </>
   )

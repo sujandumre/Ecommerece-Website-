@@ -83,11 +83,11 @@ import iphonebest from "../assets/iphonebest.png";
 // export default Productcard
 
 
-function ProductCard({ image, name }) {
+function ProductCard({ images, name }) {
   return (
     <div className="w-64 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition duration-300 p-4">
       <img
-        src={image}
+        src={images}
         alt={name}
         className="w-full h-40 object-contain"
       />
