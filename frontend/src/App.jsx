@@ -15,11 +15,11 @@ function App() {
 
   return (
     <>
-       {/* <Navbar/> */}
+       <Navbar/>
        {/* <MobileMenu/> */}
-      {/* <Hero/>  */}
+      <Hero/> 
 
-      {/* <CategoryCard/> */}
+      <CategoryCard/>
      <Footer/>
 
     </>
