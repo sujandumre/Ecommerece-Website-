@@ -21,6 +21,8 @@ import { Link } from 'react-router-dom'
 import Productcard from './Productcard.jsx'
 import Featuredproduct from './Featuredproduct.jsx'
 import Bestseller from './Bestseller.jsx'
+import categories from "../data/categories";
+import men from "../assets/images/men.png";
 
 const CategoryCard = () => {
   return (
@@ -41,7 +43,7 @@ const CategoryCard = () => {
 
 
 <div className="flex flex-wrap gap-6 justify-center">
-  <Productcard />
+  <Productcard img={men}/>
   <Productcard />
   <Productcard />
   <Productcard />

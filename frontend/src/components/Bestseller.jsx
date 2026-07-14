@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import iphonebest from "../assets/iphonebest.png";
 // import Featuredproduct from './Featuredproduct.jsx'
 
+
 const Bestseller = () => {
   return (
     <div className="bg-[linear-gradient(135deg,#EEF2FF_0%,#DDD6FE_45%,#C4B5FD_100%)]">
