@@ -18,11 +18,13 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Productcard from './Productcard.jsx'
-import Featuredproduct from './Featuredproduct.jsx'
+import ProductCard from './Productcard.jsx'
 import Bestseller from './Bestseller.jsx'
-import categories from "../data/categories";
 import men from "../assets/images/men.png";
+// import Categories from './Categories.jsx';
+import categories from "../data/categories.js";
+// import FeaturedProduct from './FeaturedProduct.jsx';
+import FeaturedProductCard from './FeaturedProduct.jsx';
 
 const CategoryCard = () => {
   return (
@@ -43,12 +45,21 @@ const CategoryCard = () => {
 
 
 <div className="flex flex-wrap gap-6 justify-center">
-  <Productcard img={men}/>
-  <Productcard />
-  <Productcard />
-  <Productcard />
-  <Productcard />
+    {categories.map((product)=>(
+      <ProductCard
+          key={product.id}
+          image={product.image}
+          name={product.name}
+          // category={product.category}
+          // price={product.price}
+          // oldPrice={product.oldPrice}
+          // discount={product.discount}
+          // reviews={product.reviews}
+      />
+  ))}
 </div>
+
+
  <div className="flex items-center justify-between mb-6">
   <h2 className="text-2xl font-bold text-gray-900">
     Featured Products
@@ -63,12 +74,23 @@ const CategoryCard = () => {
   
 </div>
 
+
+
 <div className="flex flex-wrap gap-6 justify-center">
-  <Featuredproduct />
-  <Featuredproduct />
-  <Featuredproduct />
-  <Featuredproduct />
-  <Featuredproduct />
+
+  {categories.map((product)=>(
+      <FeaturedProductCard
+          key={product.id}
+          image={product.image}
+          name={product.name}
+          category={product.category}
+          price={product.price}
+          oldPrice={product.oldPrice}
+          discount={product.discount}
+          reviews={product.reviews}
+      />
+  ))}
+
 </div>
 
 <div className="flex items-center justify-between mb-6">
@@ -85,10 +107,18 @@ const CategoryCard = () => {
   
 </div>
 <div className="flex flex-wrap gap-6 justify-center">
-  <Bestseller/>
-  <Bestseller/>
-  <Bestseller/>
-  <Bestseller/>
+  {categories.map((product)=>(
+      <ProductCard
+          key={product.id}
+          image={product.image}
+          name={product.name}
+          // category={product.category}
+          // price={product.price}
+          // oldPrice={product.oldPrice}
+          // discount={product.discount}
+          // reviews={product.reviews}
+      />
+  ))}
 </div>
 </div>
   )
