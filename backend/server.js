@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
 
@@ -20,8 +21,10 @@ app.get("/", (req, res) => {
 });
 
 // Import Routes
-const indexRoutes = require("./routes/index");
-app.use("/", indexRoutes);
+// const indexRoutes = require("./routes/index");
+// app.use("/", indexRoutes);
+
+app.use("/auth", authRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
