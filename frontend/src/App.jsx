@@ -7,7 +7,8 @@ import CategoryCard from './components/CategoryCard.jsx'
 
 import Bestseller from './components/Bestseller.jsx'
 import Footer from './components/Footer.jsx'
-// import {MobileMenu} from './components/navbar/MobileMenu.jsx'
+
+// import MobileMenu from './components/navbar/MobileMenu.jsx'
 
 
 function App() {

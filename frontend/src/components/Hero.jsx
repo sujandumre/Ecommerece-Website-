@@ -29,7 +29,7 @@ function Hero() {
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="flex items-center justify-between min-h-[500px] bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
+          <div className="flex items-center justify-between min-h-125 bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
 
             {/* Left */}
             <div className="w-1/2 px-12">
@@ -64,7 +64,7 @@ function Hero() {
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <div className="flex items-center justify-between min-h-[500px] bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
+          <div className="flex items-center justify-between min-h-125 bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
 
             <div className="w-1/2 px-12">
               <p className="text-blue-600 font-semibold mb-4">
@@ -97,7 +97,7 @@ function Hero() {
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <div className="flex items-center justify-between min-h-[500px] bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
+          <div className="flex items-center justify-between min-h-125 bg-[linear-gradient(135deg,#eef1ff_0%,#d8d4ff_35%,#c9c2ff_65%,#f7f8ff_100%)]">
 
             <div className="w-1/2 px-12">
               <p className="text-red-500 font-semibold mb-4">

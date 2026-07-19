@@ -13,6 +13,7 @@ import {
 import '../../App.css'; 
 import Searchbar from './Searchbar.jsx'
 import NavActions from './NavActions.jsx'
+import MobileMenu from './MobileMenu.jsx';
 
 
 function Navbar () {
@@ -25,11 +26,11 @@ function Navbar () {
   {/* Logo */}
   <a href="/" className="flex items-center gap-2 shrink-0">
     
-     <img
+     {/* <img
             src={logo}
             alt="ShopEase Logo"
             className="h-10 w-auto"
-          />
+          /> */}
     <span className="text-blue-600 font-semibold text-xl">ShopEase</span>
   </a>
 
@@ -41,10 +42,16 @@ function Navbar () {
   </div>
 
   {/* Nav links + icons go here */}
-
+ <MobileMenu/>
    <NavActions />
+   {/* <MobileMenu/> */}
    
+   {/* <div className="nav-menu flex items-center gap-6 px-6 py-3 bg-white  border-b border-gray-200 text-gray-900">
+  <MobileMenu/>
+  </div> */}
 </nav>
+
+
       </>
   )
 }

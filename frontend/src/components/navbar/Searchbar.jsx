@@ -41,7 +41,7 @@ import { Search } from "lucide-react";
 
 function Searchbar() {
   return (
-    <div className="flex items-center w-[700px] h-11 border border-gray-300 rounded-lg overflow-hidden bg-white">
+    <div className="flex items-center w-[500px] h-11 border border-gray-300 rounded-lg overflow-hidden bg-white">
 
       {/* Search Input */}
       <input
