@@ -2,7 +2,7 @@ import React from 'react'
 import iphonebest from "../assets/iphonebest.png";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom'
-import categories from "../data/categories.js";
+import products from "../data/products.js";
 
 const Productcard = ({image, name}) => {
   return (

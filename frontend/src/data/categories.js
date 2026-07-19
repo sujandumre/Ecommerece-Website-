@@ -4,9 +4,8 @@ import beauty from "../assets/images/beauty.png";
 import men from "../assets/images/men.png";
 import laptop from "../assets/images/laptop.png";
 import watch from "../assets/images/watch.png";
-// import watch from "../assets/watch.png";
-
-// import laptop from "../assets/laptop.png";
+// import sports from "../assets/images/sports.png";
+import sports from "../assets/images/sports.jpg";
 
 const categories= [
 
@@ -63,6 +62,26 @@ const categories= [
     oldPrice:2299,
     discount:"-13%",
     reviews:98,
+  },
+   {
+    id:6,
+    image:men,
+    name:"Fashion",
+    category:"Clothing",
+    price:199,
+    oldPrice:249,
+    discount:"-20%",
+    reviews:156,
+  },
+  {
+    id:7,
+    image:sports,
+    name:"Sports Wear",
+    category:"Sports",
+    price:50,
+    oldPrice:70,
+    discount:"-10%",
+    reviews:45,
   },
 
 ];
