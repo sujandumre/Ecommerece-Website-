@@ -6,6 +6,7 @@ import laptop from "../assets/images/laptop.png";
 import watch from "../assets/images/watch.png";
 // import sports from "../assets/images/sports.png";
 import sports from "../assets/images/sports.jpg";
+import books from "../assets/images/books.jpg";
 
 const categories= [
 
@@ -82,6 +83,18 @@ const categories= [
     oldPrice:70,
     discount:"-10%",
     reviews:45,
+    
+  },
+
+  {
+    id:8,
+    image:books,
+    name:"Books",
+    category:"Education",
+    price:50,
+    oldPrice:70,
+    discount:"-10%",
+    reviews:45
   },
 
 ];

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+
+const navigate = useNavigate();
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -16,18 +20,27 @@ function Register() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/auth/register",
+      {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      }
+    );
 
-    console.log(formData);
+    alert(response.data.message);
 
-    // Backend Integration Later
-  };
+    navigate("/login");
+
+  } catch (error) {
+    alert(error.response.data.message);
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
