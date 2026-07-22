@@ -4,6 +4,8 @@ const jwt = require("jsonwebtoken");
 
 // Register User
 const registerUser = async (req, res) => {
+   console.log("Inside Register Controller");
+  console.log(req.body);
   try {
     const { name, email, password } = req.body;
 
@@ -51,7 +53,27 @@ const registerUser = async (req, res) => {
   }
 };
 
+// Get All Users
+const getAllUsers = async (req, res) => {
+  try {
 
+    const users = await User.find().select("-password");
+
+    res.status(200).json({
+      success: true,
+      count: users.length,
+      users,
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+
+  }
+};
 
 // Login User
 const loginUser = async (req, res) => {
@@ -108,4 +130,5 @@ const loginUser = async (req, res) => {
 module.exports = {
   registerUser,
   loginUser,
+  getAllUsers,
 };
