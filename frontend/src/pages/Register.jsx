@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { registerUser } from "../services/authServices";
 
 
-const navigate = useNavigate();
 
 function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,27 +21,52 @@ function Register() {
     });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+//  const handleSubmit = async (e) => {
+//   e.preventDefault();
 
-  try {
-    const response = await axios.post(
-      "http://localhost:5000/auth/register",
-      {
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      }
-    );
+//   try {
+//     const response = await axios.post(
+//       "http://localhost:5000/auth/register",
+//       {
+//         name: formData.name,
+//         email: formData.email,
+//         password: formData.password,
+//       }
+//     );
 
-    alert(response.data.message);
+//     alert(response.data.message);
 
-    navigate("/login");
+//     navigate("/login");
 
-  } catch (error) {
-    alert(error.response.data.message);
-  }
-};
+//   } catch (error) {
+//     alert(error.response.data.message);
+//   }
+// };
+
+const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    try{
+
+        const data = await registerUser({
+            name,
+            email,
+            password,
+        });
+
+        alert(data.message);
+
+        navigate("/login");
+
+    }
+    catch(error){
+
+        alert(error.response.data.message);
+
+    }
+
+}
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">

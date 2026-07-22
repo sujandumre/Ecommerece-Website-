@@ -5,7 +5,7 @@ const MobileMenu = () => {
   return (
     
     <div className="flex-row items-center gap-6 mt-4 md:mt-0">
-      <Link to="/Home" className="ml-5 bg-white-500 hover:text-blue-600 text-black  rounded-lg transition">
+      <Link to="/" className="ml-5 bg-white-500 hover:text-blue-600 text-black  rounded-lg transition">
       Home
     </Link>
 

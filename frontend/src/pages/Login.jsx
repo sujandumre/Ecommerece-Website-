@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { loginUser } from "../services/authServices";
+import {  loginUser } from "../services/authServices";
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const navigate = useNavigate();
+
+
 
 function Login() {
+
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
@@ -22,28 +25,26 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.post(
-      "http://localhost:5000/auth/login",
-      {
-        email,
-        password,
-      }
-    );
 
-    localStorage.setItem("token", response.data.token);
+    const data = await loginUser({
+      email,
+      password,
+    });
+
+    localStorage.setItem("token", data.token);
 
     localStorage.setItem(
       "user",
-      JSON.stringify(response.data.user)
+      JSON.stringify(data.user)
     );
 
-    alert("Login Successful");
+    alert(data.message);
 
     navigate("/");
 
   } catch (error) {
 
-    alert(error.response?.data?.message || "Login Failed");
+    alert(error.response.data.message);
 
   }
 };
