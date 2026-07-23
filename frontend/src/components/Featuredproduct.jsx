@@ -1,169 +1,149 @@
-// // import React from 'react'
-// // import iphonebest from "../assets/iphonebest.png";
 
-// // const Featuredproduct = () => {
-// //   return (
-    
-
-// //       <div className="flex flex-wrap gap-6 justify-center">
-      
-// //          <div className="ml-8  w-64 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition duration-300 cursor-pointer p-3">
-      
-// //         <img
-// //           src={iphonebest}
-// //           alt="Electronics"
-// //           className="w-full h-40 object-contain"
-// //         />
-      
-// //         <h3 className="mt-3 text-xl font-semibold text-center">
-// //           Electronics
-// //         </h3>
-      
-// //       </div>
-// //       </div>
-    
-// //   )
-// // }
-
-// // export default Featuredproduct
-
-
-
+// import React from "react";
 // import { FaHeart, FaStar } from "react-icons/fa";
-// // import iphonebest from "../assets/images/iphonebest.png";
-// import iphonebest from "../assets/iphonebest.png";
 
-// function FeaturedProductCard() {
+// function FeaturedProductCard({
+//   image,
+//   name,
+//   category,
+//   price,
+//   oldPrice,
+//   discount,
+//   reviews,
+// }) {
 //   return (
 //     <div className="w-54 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
 
-//       {/* Wishlist */}
 //       <div className="flex justify-end p-3">
+//         onClick="{addToWishlist}"
 //         <FaHeart className="text-gray-400 hover:text-red-500 cursor-pointer" />
+        
 //       </div>
 
-//       {/* Product Image */}
 //       <div className="flex justify-center px-4">
 //         <img
-//           src={iphonebest}
-//           alt="iPhone"
+//           src={image}
+//           alt={name}
 //           className="h-40 object-contain"
 //         />
 //       </div>
 
-//       {/* Product Details */}
 //       <div className="p-4">
 
 //         <h3 className="font-semibold text-gray-900 text-lg">
-//           iPhone 15 Pro Max
+//           {name}
 //         </h3>
 
 //         <p className="text-gray-500 text-sm">
-//           Smartphones
+//           {category}
 //         </p>
 
-//         {/* Rating */}
 //         <div className="flex items-center gap-1 mt-2">
-//           <FaStar className="text-yellow-400 text-sm" />
-//           <FaStar className="text-yellow-400 text-sm" />
-//           <FaStar className="text-yellow-400 text-sm" />
-//           <FaStar className="text-yellow-400 text-sm" />
-//           <FaStar className="text-yellow-400 text-sm" />
+//           <FaStar className="text-yellow-400 text-sm"/>
+//           <FaStar className="text-yellow-400 text-sm"/>
+//           <FaStar className="text-yellow-400 text-sm"/>
+//           <FaStar className="text-yellow-400 text-sm"/>
+//           <FaStar className="text-yellow-400 text-sm"/>
 
 //           <span className="text-gray-500 text-xs ml-1">
-//             (120)
+//             ({reviews})
 //           </span>
 //         </div>
 
-//         {/* Price */}
 //         <div className="flex items-center gap-2 mt-3">
-//           <span className="text-xl font-bold text-black">
-//             $999
+
+//           <span className="text-xl font-bold">
+//             ${price}
 //           </span>
 
-//           <span className="text-gray-400 line-through text-sm">
-//             $1199
+//           <span className="text-gray-400 line-through">
+//             ${oldPrice}
 //           </span>
 
-//           <span className="text-red-500 text-sm font-semibold">
-//             -17%
+//           <span className="text-red-500 font-semibold">
+//             {discount}
 //           </span>
+
 //         </div>
 
 //       </div>
+
 //     </div>
 //   );
 // }
 
 // export default FeaturedProductCard;
 
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { FaHeart, FaStar } from "react-icons/fa";
 
-function FeaturedProductCard({
-  image,
-  name,
-  category,
-  price,
-  oldPrice,
-  discount,
-  reviews,
-}) {
-  return (
-    <div className="w-54 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden">
+function FeaturedProductCard({ product }) {
 
+  const [liked, setLiked] = useState(false);
+
+  const addToWishlist = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      await axios.post(
+        "http://localhost:5000/api/wishlist",
+        {
+          productId: product._id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setLiked(true);
+
+      alert("Added to Wishlist");
+    } catch (error) {
+      console.log(error);
+      alert("Failed to add wishlist");
+    }
+  };
+
+  return (
+    <div className="w-54 bg-white rounded-lg shadow">
+
+      {/* Wishlist */}
       <div className="flex justify-end p-3">
-        <FaHeart className="text-gray-400 hover:text-red-500 cursor-pointer" />
+        <FaHeart
+          onClick={addToWishlist}
+          className={`cursor-pointer text-xl ${
+            liked ? "text-red-500" : "text-gray-400"
+          }`}
+        />
       </div>
 
-      <div className="flex justify-center px-4">
+      {/* Product Image */}
+      <div className="flex justify-center">
         <img
-          src={image}
-          alt={name}
+          src={product.image}
+          alt={product.name}
           className="h-40 object-contain"
         />
       </div>
 
+      {/* Product Details */}
       <div className="p-4">
+        <h3 className="font-semibold">{product.name}</h3>
 
-        <h3 className="font-semibold text-gray-900 text-lg">
-          {name}
-        </h3>
-
-        <p className="text-gray-500 text-sm">
-          {category}
-        </p>
+        <p className="text-gray-500">{product.category}</p>
 
         <div className="flex items-center gap-1 mt-2">
-          <FaStar className="text-yellow-400 text-sm"/>
-          <FaStar className="text-yellow-400 text-sm"/>
-          <FaStar className="text-yellow-400 text-sm"/>
-          <FaStar className="text-yellow-400 text-sm"/>
-          <FaStar className="text-yellow-400 text-sm"/>
-
-          <span className="text-gray-500 text-xs ml-1">
-            ({reviews})
-          </span>
+          <FaStar className="text-yellow-400" />
+          <span>{product.rating}</span>
         </div>
 
-        <div className="flex items-center gap-2 mt-3">
-
-          <span className="text-xl font-bold">
-            ${price}
-          </span>
-
-          <span className="text-gray-400 line-through">
-            ${oldPrice}
-          </span>
-
-          <span className="text-red-500 font-semibold">
-            {discount}
-          </span>
-
+        <div className="mt-3">
+          <span className="font-bold">${product.price}</span>
         </div>
-
       </div>
-
     </div>
   );
 }
