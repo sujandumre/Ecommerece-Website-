@@ -77,9 +77,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { FaHeart, FaStar } from "react-icons/fa";
+import products from "../data/products.js";
 
 function FeaturedProductCard({ product }) {
 
+  if (!product) {
+    return null;
+  }
+  
   const [liked, setLiked] = useState(false);
 
   const addToWishlist = async () => {

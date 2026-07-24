@@ -1,81 +1,128 @@
-import React from "react";
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
-
-import iphonebest from "../assets/iphonebest.png";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+// import Navbar from "../components/navbar/Navbar";
+// import Footer from "../components/Footer";
+// import FeaturedProductCard from "../components/FeaturedProductCard";
+import FeaturedProductCard from "../components/Featuredproduct";
+import products from "../data/products";
 
 function Wishlist() {
-  const wishlist = [
-    {
-      id: 1,
-      name: "iPhone 15 Pro Max",
-      price: 999,
-      image: iphone,
-    },
-    {
-      id: 2,
-      name: "Apple Watch Series 9",
-      price: 399,
-      image: iphone,
-    },
-    {
-      id: 3,
-      name: "Nike Air Max",
-      price: 189,
-      image: iphone,
-    },
-  ];
+  const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getWishlist = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const response = await axios.get(
+        "http://localhost:5000/api/wishlist",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setWishlist(response.data.wishlist);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getWishlist();
+  }, []);
+
+  const removeWishlist = async (productId) => {
+    try {
+      const token = localStorage.getItem("token");
+
+      await axios.delete(
+        `http://localhost:5000/api/wishlist/${productId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setWishlist(
+        wishlist.filter((item) => item.product._id !== productId)
+      );
+
+      alert("Removed from Wishlist");
+    } catch (error) {
+      console.log(error);
+      alert("Unable to remove product");
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-6">
+    <>
+      {/* <Navbar /> */}
 
-      <h1 className="text-3xl font-bold mb-8">
-        My Wishlist
-      </h1>
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-white px-8 py-10">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto">
 
-        {wishlist.map((item) => (
+          <h1 className="text-4xl font-bold text-gray-800">
+            My Wishlist
+          </h1>
 
-          <div
-            key={item.id}
-            className="bg-white rounded-xl shadow-md p-5"
-          >
+          <p className="text-gray-500 mt-2 mb-8">
+            Save your favourite products and buy them later.
+          </p>
 
-            <div className="flex justify-end">
+          {loading ? (
+            <h2 className="text-center text-2xl">
+              Loading...
+            </h2>
+          ) : wishlist.length === 0 ? (
+            <div className="text-center py-20">
 
-              <FaHeart className="text-red-500 text-xl cursor-pointer" />
+              <h2 className="text-3xl font-bold text-gray-700">
+                Your Wishlist is Empty ❤️
+              </h2>
+
+              <p className="mt-3 text-gray-500">
+                Add your favourite products to see them here.
+              </p>
 
             </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
 
-            <img
-              src={item.image}
-              alt={item.name}
-              className="h-48 mx-auto object-contain"
-            />
+              {wishlist.map((item) => (
 
-            <h2 className="font-semibold text-lg mt-4">
-              {item.name}
-            </h2>
+                <div key={item._id} className="relative">
 
-            <p className="text-blue-600 font-bold mt-2">
-              ${item.price}
-            </p>
+                  <FeaturedProductCard
+                    product={item.product}
+                  />
 
-            <button className="mt-5 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg flex items-center justify-center gap-2">
+                  <button
+                    onClick={() =>
+                      removeWishlist(item.product._id)
+                    }
+                    className="absolute top-3 left-3 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg"
+                  >
+                    Remove
+                  </button>
 
-              <FaShoppingCart />
+                </div>
 
-              Add To Cart
+              ))}
 
-            </button>
-
-          </div>
-
-        ))}
+            </div>
+          )}
+        </div>
 
       </div>
 
-    </div>
+      {/* <Footer /> */}
+    </>
   );
 }
 

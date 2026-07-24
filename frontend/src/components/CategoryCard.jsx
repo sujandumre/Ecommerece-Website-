@@ -21,9 +21,8 @@ import { Link } from 'react-router-dom'
 import ProductCard from './Productcard.jsx'
 import Bestseller from './Bestseller.jsx'
 import men from "../assets/images/men.png";
-// import Categories from './Categories.jsx';
 import categories from "../data/categories.js";
-// import FeaturedProduct from './FeaturedProduct.jsx';
+
 import FeaturedProductCard from './FeaturedProduct.jsx';
 
 const CategoryCard = () => {

@@ -16,6 +16,9 @@ const MobileMenu = () => {
     <Link to="/Brands" className="ml-6 bg-white-500 hover:text-blue-600 text-black  rounded-lg transition">
       Brands
     </Link>
+
+   
+
     <Link to="/Deals" className="ml-6 bg-white-500 hover:text-blue-600 text-black  rounded-lg transition">
       Deals
     </Link>

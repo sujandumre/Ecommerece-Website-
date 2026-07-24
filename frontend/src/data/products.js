@@ -4,9 +4,7 @@ import beauty from "../assets/images/beauty.png";
 import men from "../assets/images/men.png";
 import laptop from "../assets/images/laptop.png";
 import watch from "../assets/images/watch.png";
-// import watch from "../assets/watch.png";
 
-// import laptop from "../assets/laptop.png";
 
 const products= [
 

@@ -41,6 +41,17 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/Cart";
+// import Brands from "./pages/Brands.jsx";
+import Brands from "./pages/Brands";
+import Contact from "./pages/Contact.jsx";
+import Deals from "./pages/Deals.jsx";
+import ProductDetails from "./pages/ProductDetails.jsx";
+// import Shop from "./pages/Shop.jsx";
+import Shop from "./pages/Shop.jsx";
+// import TrackOrder from "./pages/TrackOrder.jsx";
+
+import TrackOrder from "./pages/TrackOrder";
+
 
 function App() {
   return (
@@ -53,6 +64,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/shop" element={<Shop/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/brands" element={<Brands />} />
+        <Route path="/deals" element={<Deals />} />
+        <Route path="/productdetails" element={<ProductDetails />} />
+        {/* <Route path="/trackorder" element={<TrackOrder />} /> */}
+        <Route path="/track-order" element={<TrackOrder />} />
       </Routes>
       {/* <Hero />
       <CategoryCard /> */}
