@@ -50,7 +50,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900 px-6">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-900 via-blue-900 to-slate-900 px-6">
 
       <div className="w-full max-w-md">
 

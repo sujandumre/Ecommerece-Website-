@@ -50,7 +50,7 @@ function Brands() {
     <>
       {/* <Navbar /> */}
 
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-white py-16 px-6">
+      <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-white py-16 px-6">
 
         <div className="max-w-7xl mx-auto">
 

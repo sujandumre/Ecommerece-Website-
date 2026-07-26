@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { registerUser } from "../services/authServices";
-
+import Login from "./Login.jsx";
 
 
 function Register() {
@@ -165,11 +165,12 @@ const handleSubmit = async (e) => {
           Already have an account?
 
           <Link
-            href="/login"
+            to="/login"
             className="text-blue-600 hover:underline ml-1"
           >
             Login
           </Link>
+          
         </p>
 
       </div>

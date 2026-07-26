@@ -15,7 +15,7 @@ function Deals() {
     <>
       {/* <Navbar /> */}
 
-      <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-white py-10 px-6">
+      <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-white py-10 px-6">
 
         <div className="max-w-7xl mx-auto">
 
@@ -31,7 +31,7 @@ function Deals() {
           </div>
 
           {/* Banner */}
-          <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl text-white p-10 mb-10 shadow-lg">
+          <div className="bg-linear-to-r from-red-500 to-pink-600 rounded-2xl text-white p-10 mb-10 shadow-lg">
             <h2 className="text-3xl font-bold">
               Mega Sale
             </h2>
