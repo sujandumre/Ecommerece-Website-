@@ -71,6 +71,7 @@ const CategoryCard = () => {
     View All
   </Link>
   
+  
 </div>
 
 

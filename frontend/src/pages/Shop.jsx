@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import Navbar from "../components/navbar/Navbar";
-// import Footer from "../components/Footer";
-// import FeaturedProductCard from "../components/FeaturedProductCard";
+import Footer from "../components/Footer";
 import FeaturedProductCard from "../components/Featuredproduct";
 import products from "../data/products";
 
