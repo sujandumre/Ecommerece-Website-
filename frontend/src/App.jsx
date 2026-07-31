@@ -100,6 +100,7 @@ import Deals from "./pages/Deals";
 import ProductDetails from "./pages/ProductDetails";
 import Shop from "./pages/Shop";
 import TrackOrder from "./pages/TrackOrder";
+import Categories from "./pages/Categories";
 
 function App() {
   return (
@@ -192,6 +193,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
 
       <Footer />

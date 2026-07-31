@@ -4,9 +4,9 @@ import beauty from "../assets/images/beauty.png";
 import men from "../assets/images/men.png";
 import laptop from "../assets/images/laptop.png";
 import watch from "../assets/images/watch.png";
-// import sports from "../assets/images/sports.png";
 import sports from "../assets/images/sports.jpg";
 import books from "../assets/images/books.jpg";
+
 
 const categories= [
 
@@ -96,6 +96,7 @@ const categories= [
     discount:"-10%",
     reviews:45
   },
+  
 
 ];
 
