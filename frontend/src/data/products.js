@@ -21,6 +21,15 @@ import samsungwatches from "../assets/images/samsungwatches.png";
 import lenovowatches from "../assets/images/lenovowatches.png";
 import hawaiwatches from "../assets/images/hawaiwatches.png"
 
+import hplaptop from "../assets/images/hplaptop.png";
+import lenovolaptop from "../assets/images/lenovolaptop.png";
+import acerlaptop from "../assets/images/acerlaptop.png";
+import asuslaptop from "../assets/images/asuslaptop.png";
+
+import ceravebeauty from "../assets/images/ceravebeauty.png";
+import papayabeauty from "../assets/images/papayabeauty.png";
+import perfumes from "../assets/images/perfumes.png";
+
 const products= [
 
   {
@@ -223,6 +232,95 @@ const products= [
   discount: "-15%",
   reviews: 188,
   rating: 4.7,
+},
+{
+  id: 18,
+  image: hplaptop,
+  name: "HP Pavilion 15",
+  brand: "HP",
+  category: "Laptop",
+  price: 899,
+  oldPrice: 999,
+  discount: "-10%",
+  reviews: 165,
+  rating: 4.6,
+},
+
+{
+  id: 19,
+  image: lenovolaptop,
+  name: "Lenovo ThinkPad X1",
+  brand: "Lenovo",
+  category: "Laptop",
+  price: 1199,
+  oldPrice: 1399,
+  discount: "-14%",
+  reviews: 210,
+  rating: 4.8,
+},
+
+{
+  id: 20,
+  image: acerlaptop,
+  name: "Acer Aspire 7",
+  brand: "Acer",
+  category: "Laptop",
+  price: 799,
+  oldPrice: 949,
+  discount: "-16%",
+  reviews: 138,
+  rating: 4.5,
+},
+
+{
+  id: 21,
+  image: asuslaptop,
+  name: "ASUS ROG Zephyrus G14",
+  brand: "ASUS",
+  category: "Laptop",
+  price: 1499,
+  oldPrice: 1699,
+  discount: "-12%",
+  reviews: 276,
+  rating: 4.9,
+},
+{
+  id: 22,
+  image: ceravebeauty,
+  name: "CeraVe Moisturizing Cream",
+  brand: "CeraVe",
+  category: "Beauty",
+  price: 24,
+  oldPrice: 30,
+  discount: "-20%",
+  reviews: 325,
+  rating: 4.8,
+},
+
+{
+  id: 23,
+  image: papayabeauty,
+  name: "Papaya Brightening Face Wash",
+  brand: "Nature Glow",
+  category: "Beauty",
+  price: 15,
+  oldPrice: 20,
+  discount: "-25%",
+  reviews: 187,
+  rating: 4.6,
+},
+
+{
+  id: 24,
+  image: perfumes,
+  name: "Luxury Eau De Parfum",
+  brand: "Essence",
+  category: "Beauty",
+  price: 89,
+  oldPrice: 110,
+  discount: "-19%",
+  reviews: 254,
+  rating: 4.9,
 },
 
 ];

@@ -20,10 +20,8 @@ function Searchbar() {
         className="h-full w-44 px-3 border-l border-gray-300 outline-none bg-white text-gray-700 cursor-pointer"
       >
         <option value="all">All Categories</option>
-        <option value="electronics">Electronics</option>
-        <option value="fashion">Fashion</option>
+        <option value="electronics">Gadgets</option>
         <option value="shoes">Shoes</option>
-        <option value="home">Home & Kitchen</option>
         <option value="beauty">Beauty</option>
       </select>
 
