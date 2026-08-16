@@ -109,8 +109,10 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use("/auth", authRoutes);
+
+
 app.use("/api/cart", cartRoutes);
+app.use("/auth", authRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/payments", paymentRoutes);

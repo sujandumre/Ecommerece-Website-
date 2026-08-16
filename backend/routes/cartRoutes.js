@@ -1,33 +1,58 @@
-const express = require("express");
+// const express = require("express");
 
-const router = express.Router();
+// const router = express.Router();
 
-const {
+// const {
+//   addToCart,
+//   getCart,
+//   updateCart,
+//   removeFromCart,
+//   clearCart,
+// } = require("../controller/cart.controller");
+
+// const authMiddleware = require("../middleware/authMiddleware");
+
+// // Test Route
+// router.get("/test", (req, res) => {
+//   res.json({
+//     success: true,
+//     message: "Cart Route Working",
+//   });
+// });
+
+// router.post("/", authMiddleware, addToCart);
+
+// router.get("/", authMiddleware, getCart);
+
+// router.put("/:id", authMiddleware, updateCart);
+
+// router.delete("/:id", authMiddleware, removeFromCart);
+
+// router.delete("/clear/all", authMiddleware, clearCart);
+
+// module.exports = router;
+
+// routes/cart.routes.js
+
+import express from "express";
+
+import {
   addToCart,
   getCart,
   updateCart,
-  removeFromCart,
-  clearCart,
-} = require("../controller/cart.controller");
+  removeFromCart
+} from "../controllers/cart.controller.js";
 
-const authMiddleware = require("../middleware/authMiddleware");
+import authMiddleware from "../middleware/authMiddleware.js";
 
-// Test Route
-router.get("/test", (req, res) => {
-  res.json({
-    success: true,
-    message: "Cart Route Working",
-  });
-});
-
-router.post("/", authMiddleware, addToCart);
+const router = express.Router();
 
 router.get("/", authMiddleware, getCart);
 
-router.put("/:id", authMiddleware, updateCart);
+router.post("/", authMiddleware, addToCart);
 
-router.delete("/:id", authMiddleware, removeFromCart);
+router.put("/:productId", authMiddleware, updateCart);
 
-router.delete("/clear/all", authMiddleware, clearCart);
+router.delete("/:productId", authMiddleware, removeFromCart);
 
-module.exports = router;
+export default router;
