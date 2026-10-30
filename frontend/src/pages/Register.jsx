@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { registerUser } from "../services/authServices";
-import Login from "./Login.jsx";
 
 
 function Register() {
@@ -21,52 +19,31 @@ function Register() {
     });
   };
 
-//  const handleSubmit = async (e) => {
-//   e.preventDefault();
-
-//   try {
-//     const response = await axios.post(
-//       "http://localhost:5000/auth/register",
-//       {
-//         name: formData.name,
-//         email: formData.email,
-//         password: formData.password,
-//       }
-//     );
-
-//     alert(response.data.message);
-
-//     navigate("/login");
-
-//   } catch (error) {
-//     alert(error.response.data.message);
-//   }
-// };
-
 const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    e.preventDefault();
+  // Check password confirmation
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-    try{
+  try {
+    const data = await registerUser({
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+    });
 
-        const data = await registerUser({
-            name,
-            email,
-            password,
-        });
+    alert(data.message);
 
-        alert(data.message);
-
-        navigate("/login");
-
-    }
-    catch(error){
-
-        alert(error.response.data.message);
-
-    }
-
-}
+    navigate("/login");
+  } catch (error) {
+    alert(
+      error.response?.data?.message || "Registration failed!"
+    );
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
